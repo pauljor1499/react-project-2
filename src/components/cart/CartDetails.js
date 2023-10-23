@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./styles.module.css";
+import "./CartDetails.css";
 //store
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../redux/slices/ProductSlice";
+import { removeProduct } from "../../redux/slices/ProductSlice";
 
 const CartDetails = () => {
     const products = useSelector((state) => state.Products); //state from store
@@ -11,13 +11,13 @@ const CartDetails = () => {
 
     return (
         <>
-            <div className={styles.cartDetails}>
+            <div className={"cartDetails"}>
                 <h3>Total Products: {products.length}</h3>
                 {products.map((item, index) => (
-                    <div key={index} className={styles.itemCartProduct}>
+                    <div key={index} className={"itemCartProduct"}>
                         <div>{item.title}</div>
                         <button
-                            className={styles.itemProductButton}
+                            className={"itemProductButton"}
                             onClick={() => {
                                 dispatch(removeProduct(index));
                             }}
