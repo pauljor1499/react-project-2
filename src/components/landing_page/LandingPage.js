@@ -35,7 +35,9 @@ const LandingPage = () => {
 
     return (
         <div className="landing-page-content">
-            <div className="content-left"></div>
+            <div className="content-left">
+                <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/reactjs_logo_icon_168875.png" alt="" />
+            </div>
             <div className="content-right">
                 <div className="form-content">
                     <span>Email</span>

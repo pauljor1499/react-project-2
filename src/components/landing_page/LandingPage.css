@@ -6,7 +6,16 @@
 .content-left {
     flex: 1;
     height: 100vh;
-    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-left img {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    margin: auto;
 }
 
 .content-right {
