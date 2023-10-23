@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import styles from "./styles.module.css";
-import { ProductsData } from "./Data";
+import "./Products.css";
+import { ProductsData } from "../Data";
 //store
 import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/slices/ProductSlice";
+import { addProduct } from "../../redux/slices/ProductSlice";
 //route params
 import { useParams } from "react-router-dom";
 
 const Products = () => {
     const dispatch = useDispatch();
+    const { email } = useParams();
 
     const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
-
-    const { email } = useParams();
 
     // useEffect(() => {
     //     fetch("https://dummyjson.com/products")
@@ -32,18 +31,21 @@ const Products = () => {
     if (data && data.length > 0) {
         return (
             <>
-                <div className={styles.productsContent}>
-                    <div className={styles.products}>
-                        <input className={styles.search} type="text" placeholder="Search Item" onChange={searchItem} />
+                <div className={"welcomeMessage"}>
+                    <h4>Hello, {email}!</h4>
+                </div>
+                <div className={"productsContent"}>
+                    <div className={"products"}>
+                        <input className={search} type="text" placeholder="Search Item" onChange={searchItem} />
                         {data
                             .filter((item) => {
                                 return search.toLowerCase() === "" ? item : item.title.toLowerCase().includes(search);
                             })
                             .map((item, index) => (
-                                <div key={index} className={styles.itemProduct}>
+                                <div key={index} className={"itemProduct"}>
                                     <span>{item.title}</span>
                                     <button
-                                        className={styles.itemProductButton}
+                                        className={"itemProductButton"}
                                         onClick={() => {
                                             dispatch(
                                                 addProduct({

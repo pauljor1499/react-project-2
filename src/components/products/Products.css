@@ -1,0 +1,39 @@
+.welcomeMessage {
+    padding: 25px;
+}
+
+.productsContent {
+    width: 50%;
+}
+
+.productsContent input {
+    border: 1px solid black;
+}
+
+.products {
+    width: 100%;
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.itemProduct {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: whitesmoke;
+    margin: 10px;
+}
+
+.itemProductButton {
+    padding: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+}

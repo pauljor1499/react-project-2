@@ -20,7 +20,6 @@ const LandingPage = () => {
 
     const clickLogin = () => {
         navigate(`/products/${email}`);
-        console.log("Login!");
     };
 
     return (
