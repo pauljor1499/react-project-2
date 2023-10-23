@@ -3,9 +3,13 @@ import "./LandingPage.css";
 import { useState } from "react";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+//store
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/slices/User";
 
 const LandingPage = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState("");
     const [password, setPasword] = useState("");
@@ -19,7 +23,14 @@ const LandingPage = () => {
     };
 
     const clickLogin = () => {
-        navigate(`/products/${email}`);
+        // navigate(`/products/${email}`);
+        navigate("/products");
+        dispatch(
+            setUser({
+                name: email,
+                password: password,
+            })
+        );
     };
 
     return (

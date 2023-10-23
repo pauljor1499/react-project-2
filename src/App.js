@@ -13,7 +13,7 @@ function App() {
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<LandingPage />}></Route>
-                    <Route path="/products/:email" element={<Products />}></Route>
+                    <Route path="/products" element={<Products />}></Route>
                     <Route path="/cart" element={<CartDetails />}></Route>
                 </Routes>
             </BrowserRouter>
