@@ -4,12 +4,16 @@ import { ProductsData } from "./Data";
 //store
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/slices/ProductSlice";
+//route params
+import { useParams } from "react-router-dom";
 
 const Products = () => {
     const dispatch = useDispatch();
 
     const [data, setData] = useState([]);
     const [search, setSearch] = useState("");
+
+    const { email } = useParams();
 
     // useEffect(() => {
     //     fetch("https://dummyjson.com/products")
